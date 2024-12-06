@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+
+		body {
+			background-image: url('fundo.gif');
+			background-size: cover;
+			font-family: 'Amatic SC', sans-serif;
+			color: white;
+			text-align: center;
+			padding: 50px;
+		}
+
+		.flex {
+			background-color: rgba(0, 0, 0, 0.5); 
+			padding: 20px;
+			border-radius: 10px;
+			text-align: center;
+			display: inline-block; 
+		}
+
+		.input-text {
+			margin: 20px;
+			padding: 7px;
+			border-radius: 8px;
+			border: none;
+			font-family: 'Lobster Two', sans-serif;
+		}
+
+		.button {
+			margin: 10px;
+			padding: 5px;
+			border-radius: 5px;
+			border: none;
+			background-color: #9b4eed;
+			color: #ffffff;
+			cursor: pointer;
+			font-family: 'Kdam Thmor Pro', sans-serif;
+			display: inline-block;
+		}
+		
+		.button:hover {
+			background-color: #affab0;
+		}
+	</style>
+</head>
+<body>
+	<form name="f" class="flex">
+		<font size="5">Digite o nome:</font><input type="text" class="input-text" name="nome" value="" size="35"><br>
+		<font size="5">Digite a cidade:</font><input type="text" class="input-text" name="cidade" value="" size="35"><br>
+		<font size="5">Digite o nome da imagem:</font><input type="text" class="input-text" name="imagem" value="" size="35"><br>
+		<div align="center">
+			<input type="hidden" name="acao" value="">
+			<input type="button" class="button" value=" CADASTRO " onClick="document.f.acao.value='cadastro';chamarWebService();">
+			<input type="button" class="button" value=" CONSULTA " onClick="document.f.acao.value='consulta';chamarWebService();">
+			<input type="button" class="button" value=" ALTERAÇÃO" onClick="document.f.acao.value='alteracao';chamarWebService();">
+			<input type="button" class="button" value=" EXCLUSÃO " onClick="document.f.acao.value='exclusao';chamarWebService();">
+		</div>
+	</form>
+	<script>
+		function chamarWebService(){  
+			// define dados a serem enviados para o webservice
+			var dados = {
+				nome	: document.f.nome.value,
+				cidade  : document.f.cidade.value, //Campo cidade adicionado
+				imagem	: document.f.imagem.value,
+				acao	: document.f.acao.value //identifica ação a ser relalizada pelo webservice
+			};
+			// informa início da chamda a execução do webservice		
+			alert('Webservice vai ser executado');    
+			$.ajax({
+					url: 'crudCidade.php',// script a ser chamado
+					type: 'POST',// Método de envio				
+					dataType: 'json',// Tipo de retorno
+					data:dados
+					
+			})
+			// .done é executado quando serviço termina, retornando informações na variável data
+			.done(function(data)
+			{   
+				alert('Webservice retorna dados JSON');    			
+				// percorre json data
+				for(var i in data){
+					alert(data[i].resultado);//mostra informação retornada
+				}
+				// fim da execução do webservice
+				alert('Webservice finalizado');    
+			});   
+		}
+</script>
+</body>
+</html>

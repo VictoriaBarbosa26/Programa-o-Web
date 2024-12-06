@@ -1,0 +1,221 @@
+<!--
+Tema: filmes ou séries
+Colocar link para trailer de cada filme ou série 
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="http://fonts.cdnfonts.com/css/terrorplate" rel="stylesheet">      
+<style>
+ 
+* {
+  box-sizing: border-box; /* mesmo usando padding ou border o tamanho não se altera*/
+}
+
+.row::after { /* texto que pode ser colocado após */
+  content: ""; /* conteúdo vazio */
+  clear: both; /* limpar float .*/
+  display: table; /* elemento table */
+}
+
+[class*="col-"] /* classe/tamanho da coluna */
+ { 
+  float: left;
+  padding: 15px;
+}
+
+html {background-image:url(teste2.gif); 
+	  background-attachment:fixed;
+    background-repeat:no-repeat;
+	  background-size:100%
+}
+
+header {
+  background-image:url(pe3.gif);
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+	background-size:100%;
+  color: #fff;
+  padding: 15px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  margin-bottom: 100px;
+  width: 480px;
+  height: 430px;
+  background-color: rgb(47, 47, 49);
+  color: #9c9797;
+}
+
+li:hover {
+  background-image:url(trova.gif);
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+	background-size:100%;
+  box-shadow: 10px 5px rgba(68, 66, 66, 0.589);
+  position: relative; 
+  top: 10px; left: 55px;
+  }
+
+.classeE {
+  background-color: rgba(0, 0, 0, 0.678);
+  padding: 15px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 15px;
+  font-family: 'Melted Monster';
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+footer {
+  background-image:url(erro.gif);
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+	background-size:100%;
+  color: #ffffff;
+  position:relative;
+  width:100%;
+  font-family: 'Melted Monster';
+  text-align: center;
+  font-size: 12px;
+  padding: 15px;
+}
+audio{
+	width:300px; height:100px;
+	position:absolute; 
+	top:0%; 
+	left:1200px;
+  opacity: 2%;
+    }
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+h1{
+  font-family: 'Terrorplate', sans-serif;                                  
+  font-size: 50px;
+  text-align: center;
+  color:#ffffff;
+}
+
+h2{
+  font-family: 'Terrorplate', sans-serif;                                               
+  left: 550px;
+	font-size:30px;
+	position:absolute;
+	top:150%;
+	right:41%;
+	padding:3px;
+  line-height:25px;
+  color:#ffffff;
+  opacity:50%;}
+
+h3{
+  font-family: 'Terrorplate', sans-serif;                                             
+  left: 550px;
+	font-size:20px;
+	position:absolute;
+	top:160%;
+	right:41%;
+	padding:3px;
+  line-height:25px;
+  color:#ffffff;
+  opacity:50%;}
+
+h4{
+  font-family: 'Terrorplate', sans-serif;                                  
+  font-size: 30px;
+  color:#ffffff;}
+
+h5{
+  font-family: 'Terrorplate', sans-serif;                                            
+  font-size: 20px;
+  color:#ffffff;}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media screen and (min-width: 768px) {
+  /* For COMPUTER */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+img {height:400px;
+	width:450px}
+
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Filmes</h1>
+</header>
+
+<div class="row">
+  <div class="col-3 col-s-3">
+    <ul>
+     <li><a href="https://youtu.be/dD264ZjfKlk"> <img src="it.jpg" alt="filmeA"></a></li>
+     <li><a href="https://youtu.be/Hn8GsjQTUiM"> <img src="te.gif" alt="filmeA"></a></li>
+     <li><a href="https://youtu.be/BlAsN0G8_7o"> <img src="a.gif" alt="filmeA"></a></li>
+	   <li><a href="https://youtu.be/dCAbPQnFAU4"> <img src="telefone.jpg" alt="filmeA"></a></li>
+     <li><a href="https://youtu.be/v0GbEX98RF8"> <img src="massacre.jpg" alt="filmeA"></a></li>
+    </ul>
+  </div>
+
+  <div class="col-6 col-s-9">
+    <h2>Os 5 filmes de terror para assistir as 3:33</h2>
+    <h3>1 — Atividade Paranormal (2007), Oren Peli.<br></br>
+      2 — Hereditário (2018), Ari Aster.<br></br>
+      3 — Invocação do Mal (2013), James Wan.<br></br>
+      4 — Sobrenatural (2010), James Wan.<br></br>
+      5 — A Entidade (2012), Scott Derrickson.</h3>br></h3>
+  </div>
+
+  <div class="col-3 col-s-12">
+    <div class="classeE">
+      <h4>O'que e o genero de terror?</h4>
+      <h5>Terror ou horror é um gênero literário, cinematográfico ou musical, que está sempre muito ligado à fantasia e à ficção especulativa, e é criado com intuito de causar medo, aterrorizar. Também pode ser verificado na pintura, no desenho, nos filmes e fotografia.</h5>
+    </div>
+  </div>
+</div>
+<p class="audio"><audio controls><source src="msc.mp3" type = "audio/mpeg"></audio> <br></br>s</p>
+<footer>
+  <p>@QUE OS JOGOS COMECEM.</p>
+</footer>
+
+</audio>
+</body>
+</html>
